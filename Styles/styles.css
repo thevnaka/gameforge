@@ -1285,18 +1285,22 @@ h2{
 .games_con {
     display: flex;
     align-items: center;
-    /* padding: 20px; */
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+
 }
 
 .game {
-    margin: 3%;
+    margin: 1%;
     display: flex;
+    flex-wrap: nowrap;
     padding: 1%;
     flex-direction: row;
     align-items: center;
     background-color: red;
     color: white;
-    width: 45%;
+    width: 44%;
     border-radius: 8px;
     overflow: hidden;
     cursor: pointer;
@@ -1330,7 +1334,7 @@ h2{
 }
 
 .description{
-    margin-top: 3%;
+    margin-top: 2%;
     font-family: 'Nexa', sans-serif;
     color: aliceblue;
     opacity: 0;
