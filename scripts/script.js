@@ -1,11 +1,13 @@
-// if ('serviceWorker' in navigator) {
-//     navigator.serviceWorker.register('/GAME FORGE/scripts/service-worker.js')
-//       .then((registration) => {
-//         console.log('Service Worker Registered:', registration);
-//       })
-//       .catch((error) => {
-//         console.log('Service Worker Registration Failed:', error);
-//       });
-//   }
-
-
+if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+      navigator.serviceWorker
+        .register("/service-worker.js")
+        .then((registration) => {
+          console.log("ServiceWorker registered with scope: ", registration.scope);
+        })
+        .catch((error) => {
+          console.log("ServiceWorker registration failed: ", error);
+        });
+    });
+  }
+  

@@ -1,54 +1,41 @@
-// service-worker.js
-
-const CACHE_NAME = 'v1';
-const CACHE_ASSETS = [
-  '/',
-  '/index.html',
-  '/styles.css',
-  '/script.js',
-  '/images/logo.png'
+const CACHE_NAME = "my-pwa-cache-v1";
+const urlsToCache = [
+  "/",
+  "/index.html",
+  "/styles.css",
+  "/app.js",
+  "/path/to/icon-192x192.png",
+  "/path/to/icon-512x512.png"
 ];
 
-// Install Event
-self.addEventListener('install', (event) => {
-  console.log('Service Worker: Installing...');
+self.addEventListener("install", (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
-      console.log('Service Worker: Caching Files');
-      return cache.addAll(CACHE_ASSETS);
+      console.log("Opened cache");
+      return cache.addAll(urlsToCache);
     })
   );
 });
 
-// Activate Event
-self.addEventListener('activate', (event) => {
-  console.log('Service Worker: Activating...');
+self.addEventListener("fetch", (event) => {
+  event.respondWith(
+    caches.match(event.request).then((response) => {
+      return response || fetch(event.request);
+    })
+  );
+});
+
+self.addEventListener("activate", (event) => {
+  const cacheWhitelist = [CACHE_NAME];
   event.waitUntil(
     caches.keys().then((cacheNames) => {
       return Promise.all(
-        cacheNames.map((cache) => {
-          if (cache !== CACHE_NAME) {
-            console.log('Service Worker: Clearing Old Cache');
-            return caches.delete(cache);
+        cacheNames.map((cacheName) => {
+          if (!cacheWhitelist.includes(cacheName)) {
+            return caches.delete(cacheName);
           }
         })
       );
     })
-  );
-});
-
-// Fetch Event
-self.addEventListener('fetch', (event) => {
-  console.log('Service Worker: Fetching...');
-  event.respondWith(
-    fetch(event.request)
-      .then((response) => {
-        const clonedResponse = response.clone();
-        caches.open(CACHE_NAME).then((cache) => {
-          cache.put(event.request, clonedResponse);
-        });
-        return response;
-      })
-      .catch(() => caches.match(event.request))
   );
 });
