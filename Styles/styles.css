@@ -27,7 +27,7 @@
 /* <!------INTRO BODY------>  */
 
 .homepage{
-    background-image:url(/Images/home_wallpaper.png);
+    background-image:url(./Images/home_wallpaper.png);
     background-size: contain;
     background-position: center;
     overflow-x: hidden;
@@ -37,7 +37,6 @@
     padding: 0%;
     height: auto;
 }
-
 
 .intro-t{
     font-family: 'Nexa', sans-serif;
