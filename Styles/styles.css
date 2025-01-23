@@ -312,9 +312,7 @@
         font-size: 14px;
         margin: 0;
     }
-}
 
-@media screen and (max-width: 768px) {
     .awards_main_body{
         flex-direction: column;
         align-items: center;
@@ -328,7 +326,7 @@
 
     .awards_body{
         font-size: 14px;
-        margin: 20%;
+        margin: 6%;
     }
 
 
@@ -619,6 +617,18 @@ h2{
     .page-title h2{
         font-size: 1.2rem;
     }
+
+    .table{
+        display: none;
+    }
+
+    .table_alt{
+        display: flex;
+        padding: 4%;
+        margin: 3%;
+        flex-wrap: wrap;
+        background-color: #d91c22;
+    }
 }
 
 
@@ -666,22 +676,6 @@ h2{
     border-bottom: 1px solid #fefbfb;
 }
 
-.content_t th:nth-child(1){
-    width: 300px;
-}
-
-.content_t td:nth-child(1){
-    width: 300px;
-}
-
-.content_t th:nth-child(2){
-    width: 300px;
-}
-
-.content_t td:nth-child(2){
-    width: 300px;
-}
-
 .content_t tfoot tr{
     background-color: #d91c22;
     color: aliceblue;
@@ -693,7 +687,27 @@ h2{
     font-size: 0.9rem;
 }
 
+.table_alt{
+    display: none;
+}
 
+.table_alt h3{
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    font-family: 'Nexa', sans-serif;
+    color: aliceblue;
+}
+
+.table_alt ul li{
+    list-style: disc;
+    font-family: 'Nexa' ,sans-serif;
+    color: aliceblue;
+}
+
+.table_alt ul{
+    margin: 5%;
+}
 
 /* <!-------------------------UPCOMING GAMES PAGE<-------------------------->  */
 
@@ -841,6 +855,7 @@ h2{
         text-align: center;
         font-size: 14px; 
     }
+
 
     .devices, .release{
         text-align: center;
@@ -1380,22 +1395,29 @@ h2{
 
 @media (max-width: 480px) {
     .game {
-        width: 90%; 
+        width: 90%;
+        margin: 4%; 
     }
 
     .game_deets h3{
         text-align: center;
-        font-size: 25px;
+        font-size: 20px;
         margin-top: 2%;
     }
 
      .description{
-        font-size: 15px;
+        font-size: 14px;
         text-align: justify;
     }
 
     .point_list{
         font-size: 15px; 
+        margin: 4%;
+    }
+
+    .game_thumb{
+        margin-top: 2%;
+        width: 40%;
     }
 }
 
