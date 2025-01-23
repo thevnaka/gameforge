@@ -28,7 +28,6 @@
 
 .homepage{
     background-image:url(/Images/home_wallpaper.png);
-    /* background-image: url(/Images/normal\ background.png); */
     background-size: contain;
     background-position: center;
     overflow-x: hidden;
