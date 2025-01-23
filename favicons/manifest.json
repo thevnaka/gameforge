@@ -1,7 +1,7 @@
 {
     "name": "Gameforge",
-    "short_name": "GF",
-    "start_url": "./index.html",
+    "short_name": "GAME FORGE",
+    "start_url": "/gameforge/",
     "display": "standalone",
     "background_color": "#ffffff",
     "theme_color": "#000000",
