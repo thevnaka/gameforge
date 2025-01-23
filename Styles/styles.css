@@ -10,13 +10,14 @@
 
 @font-face {
     font-family: 'Nexa';
-    src: url(../Fonts/nexa/Nexa-ExtraLight.ttf);
+    src: url('../Fonts/nexa/Nexa-ExtraLight.ttf');
+
 }
 
 @font-face {
     font-family: 'Nexa';
     font-weight: bold;
-    src: url(../Fonts/nexa/Nexa-Heavy.ttf);
+    src: url('../Fonts/nexa/Nexa-Heavy.ttf');
 }
 
 
@@ -27,7 +28,7 @@
 /* <!------INTRO BODY------>  */
 
 .homepage{
-    background-image:url(../Images/home_wallpaper.png);
+    background-image:url('../Images/home_wallpaper.png');
     background-size: contain;
     background-position: center;
     overflow-x: hidden;
@@ -97,14 +98,14 @@
 
 @media screen and (max-width: 839px) {
     .homepage{ 
-       background-image: url(../Images/bg_without_character.png);
+       background-image: url('../Images/bg_without_character.png');
        background-size: cover;
     }
    }
 
 @media screen and (max-width: 600px) {
    .homepage{
-       background-image: url(../Images/normal_background_mobile.png);
+       background-image: url('../Images/normal_background_mobile.png');
        background-size: contain; 
        background-position: center top;  
        background-repeat: no-repeat;
@@ -413,7 +414,7 @@ h2{
 }
 
 .about_us_page, .upcoming_games_page, .other_page, .consoles_page, .peripherals_page, .games_page, .faq_page{
-        background-image:url(../Images/bg_without_character.png);
+        background-image:url('../Images/bg_without_character.png');
         background-size: cover;
         background-position: center;
         overflow-x: hidden;
