@@ -55,7 +55,6 @@
 .intro_para{
     position: relative;
     text-align: justify;
-    letter-spacing: 8%;
     line-height: 115%;
     left: 20px;
     top: 100px;
@@ -64,29 +63,7 @@
     color: aliceblue;
 }
 
-#learn{
-    margin-top: 11%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
 
-.learn_b{
-    border-radius: 7px;
-    font-family: 'Nexa' , sans-serif;
-    font-weight: bold;
-    border-color: #d91c22;
-    color: aliceblue;
-    padding: 10px 10px; 
-    text-decoration: none;
-    cursor: pointer;
-    background-color: #d91c22;
-    transition: all 0.23s ease 0.1s;
-}
-
-.learn_b:hover{
-    background-color: #b30a0f;
-}
 
 #learn_more {
     display: flex; 
