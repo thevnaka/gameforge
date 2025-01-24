@@ -43,6 +43,7 @@ header {
 }
 
 #navlogo { 
+    cursor: pointer;
     height: 70px;
     width: auto;
     margin: 2px;
