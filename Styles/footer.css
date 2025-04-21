@@ -1,0 +1,148 @@
+/* <!-------------- FOOTER<--------------->  */
+
+footer{
+    background-color: #171a1e;
+    color: aliceblue;
+    font-family: "Nexa", 'sans-serif';
+}
+
+.find_us{
+    text-align: center;
+    letter-spacing: 5px;
+    align-content: center;
+    margin-bottom: 20px;
+}
+.footer_con{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 40px 30px 10px;
+}
+
+.social_media {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.social_media li{
+    display: inline-block;
+}
+
+.s_icon{
+    height: 40px;
+    width: auto;
+}
+
+.line_break{
+    background-color: aliceblue;
+    margin-top: 30px;
+    height: 1px;
+    width: 40%;
+}
+
+.partners_logo {
+    margin-top: 50px;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 45px;
+    width: 100%;
+}
+
+.partners_logo li{
+    display: inline-block;
+}
+
+.p_icon{
+    height: 60px;
+    width: auto;
+}
+
+.footer_text{
+    margin-top: 20px;
+    display: flex;
+    letter-spacing: 0.3px;
+    flex-wrap: wrap;
+    font-size: 14px;
+    justify-content: space-around;
+    text-align:center;
+}
+
+
+@media screen and (max-width: 768px) {
+    .footer_con{
+        padding: 30px 20px;
+    }
+    
+    .social_media{
+        gap:15px;
+    }
+
+    .s_icon{
+        height: 30px;
+    }
+
+    .partners_logo{
+        gap:20px;
+    }
+
+    .p_icon{
+        height: 50px;
+    }
+
+    .line_break{
+        width: 60%;
+    }
+
+    .footer_text{
+        font-size: 12px;
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+    .footer_con{
+        padding: 20px 15px;
+    }
+    
+    .social_media{
+        gap:10px;
+    }
+
+    .s_icon{
+        height: 25px;
+    }
+
+    .partners_logo{
+        gap:15px;
+    }
+
+    .p_icon{
+        height: 40px;
+    }
+
+    .line_break{
+        width: 70%;
+    }
+
+    .footer_text{
+        font-size: 10px;
+    }
+
+    .find_us{
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+
+}
+
+

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GAMEFORGE | Your Premium Gaming Destination</title>
+    <link rel="stylesheet" href="./Styles/styles.css">
+    <link rel="stylesheet" href="./Styles/navbar.css">
+    <link rel="stylesheet" href="./Styles/footer.css">
+    <link rel="manifest" href="./favicons/manifest.json">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="./favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="./favicons//apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="./favicons//apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="./favicons//apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="./favicons//apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="./favicons//apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="./favicons//apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="./favicons//apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicons//apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="./favicons//android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicons//favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="./favicons//favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicons//favicon-16x16.png">
+    <link rel="manifest" href="./manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+</head>
+
+
+<body class="hardware_page">
+
+
+    <!--------------------------------------------------- MAIN HEADER<--------------------------------------------------->
+
+    <div class='logobar'>
+        <a href ='index.html'> <img id="navlogo" src="./Images/assignment_log_low_res.png" alt="gameforge logo"> </a>
+    </div>
+
+
+
+     <!---------- NAVIGATION BAR<------------> 
+
+     <header>
+        <nav>
+            <!-- hamburger menu -->
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            
+            <ul class="navitems">
+                <li>  <a href="index.html">HOME</a>  </li>
+                <li>  <a href="aboutus.html">ABOUT US</a>  </li>
+                <li>  <a href="upcoming_games.html"> UPCOMING GAMES</a>  </li>
+                <li>  <a href="other.html"  class="active"> OTHER </a>  </li>
+                <li>  <a href="games.html">GAMES</a>  </li>
+                <li>  <a href="faq.html">FAQs</a>  </li>
+            </ul>
+        </nav>
+    
+      </header>
+
+      <div class="page_title">
+        <h2>Your order Summary</h2>
+      </div>
+
+      <div id = "sumTable">
+        <table id="Ordersummary">
+            <thead>
+            <tr> 
+                <th colspan="3">Your Cart</th>
+            </tr>
+            </thead>
+            <tbody id="Summarybody"> </tbody>
+            <tfoot id="sumfooter">
+                <tr></tr>
+                <tr></tr>
+                <tr></tr>
+                <tr></tr>
+                <tr></tr>
+                <tr></tr>
+                <tr>
+                    <td colspan="1">Grand Total</td>
+                    <td id="sumGtotal" colspan="2"></td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+
+    <div class="main_payment_con">
+        <div class="payment_con">
+            <div class="title">
+                <form class="form">
+                    <h3>Enter Contact Details</h3>
+                    <input type="text" name="name" placeholder="Your name" class="Pcontact_deets" required pattern="[A-Za-z\s]+" title="Only Letters and Spaces allowed. Try Again">
+                    <input type="email" name="email" placeholder="Your E-mail" class="Pcontact_deets" required>
+                    <input type="tel" name="num" placeholder="Your Contact Number" class="Pcontact_deets" pattern="[0-9]{10}" title ="Enter a 10 digit number" required>
+                    <input type="text" name="address" placeholder="Address" class="Pcontact_deets" required >
+                    <input type="text" name="town" placeholder="Town" class="Pcontact_deets" required >
+                    <input type="text" name="postcode" placeholder="Postcode" class="Pcontact_deets" pattern="[0-9]{4,6}" title="Enter a Valid Post Code"required >
+
+
+                    <h3>Enter Payment Details</h3>
+                    <input type="text" name = "cname" placeholder="Cardholder name" class="c_deets" pattern="[A-Za-z\s]+" title="Only letters and spaces are allowed" required>
+                    <input type="text" name = "cnum" placeholder="Card Number" class="c_deets" pattern="\d{16}" title="Enter a 16-digit card number" required>
+                    <div class="card-row">
+                        <input type="number" name="cvv" placeholder="cvv" class="c_minideets" pattern="\d{3}" title="Enter a valid 3 digit CVV number" required>
+                        <input type="text" name="expDate" placeholder="MM/YY" class="c_minideets" required>
+                    </div>
+              
+
+                    <button id="submit" type="submit">PAY NOW</button>
+                </form>
+            </div>
+       </div>
+      </div>
+
+      <div id="thankContainer">
+        <div id="thankyouMsg">
+            <h3>Thank you for your Purchase</h3>
+            <p>Please stfu and wait now</p>
+        </div>
+      </div>
+      
+
+      <script src="./scripts/products.js" defer> </script>
+
+</body>
