@@ -2,7 +2,6 @@ let Main_container = document.getElementsByClassName('hardware_main_con')[0];
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 
-
 function summaryCart(){
     console.log("summaryCart function is runninggg woohoo");
 
@@ -10,7 +9,6 @@ function summaryCart(){
     const SumBody = document.getElementById("Summarybody");
 
     if (!SumBody) {
-        console.log("Summarybody not found — skipping summaryCart()");
         return;
     }
 
@@ -52,6 +50,7 @@ function updatecart(){
     document.getElementById("itemCount").innerHTML = cart.length;
     }
 
+
     
 //< -------------------------------------FUNCTION 01------------------------------------->
 
@@ -64,7 +63,7 @@ function loadCartpage(){
 
     const totalAmount = document.getElementById("totalPrice");
     const table = document.getElementById("cartTable");
-    const emptyMsg = document.getElementById("backG");
+    const emptyMsg = document.getElementById("emptyCart");
     const options = document.getElementById("orderOptions");
 
 
@@ -73,14 +72,16 @@ function loadCartpage(){
     if (cartdata.length === 0){ 
         table.hidden=true; 
         options.style.display = "none";
-        emptyMsg.hidden = false; 
+        emptyMsg.classList.remove("emptycard_hidden")
         return;
     }
 
     else{
     table.hidden = false;
     options.style.display = "flex";
-    emptyMsg.hidden = true;}
+    emptyMsg.classList.add("emptycard_hidden")
+
+    }
 
     // const SumBody = document.getElementById("Summarybody");
 
@@ -95,13 +96,16 @@ function loadCartpage(){
        
 
         const productPrice = document.createElement("td");
-        productPrice.innerText = `Rs. ${Data.price}`;
+        productPrice.innerText = ` ${Data.price} LKR`;
 
         const quantity = document.createElement("td");
         quantity.innerText = Data.quantity;
 
         const totalcell = document.createElement("td");
-        totalcell.innerText = parseInt(Data.quantity * Data.price);
+        totalcell.innerText = `${parseInt(Data.quantity * Data.price)} LKR`;
+
+
+        // const removeBtn = document.createElement("button");
 
         console.log("Quantity:", Data.quantity);
         console.log("Price:", Data.price);
@@ -114,6 +118,13 @@ function loadCartpage(){
  
 
         total +=parseFloat(Data.price*Data.quantity);
+
+        const clearBtn = document.getElementById("clearCart");
+        clearBtn.addEventListener("click",function(){
+            localStorage.removeItem("cart")
+            updatecart();
+            loadCartpage();
+        })
 
    
         // const sRow = document.createElement("tr");
@@ -329,13 +340,13 @@ document.addEventListener("DOMContentLoaded",function(){
             productName.innerText = item.name
     
             const productPrice = document.createElement("td");
-            productPrice.innerText = item.price  
+            productPrice.innerText = (` ${item.price} LKR`)  
 
             const quantity = document.createElement("td");
             quantity.innerText =item.quantity
 
             const itemTotal = document.createElement("td");
-            itemTotal.innerText = parseInt(`${item.quantity * item.price}`);
+            itemTotal.innerText = parseInt(`${item.quantity * item.price} LKR`);
 
 
             row.appendChild(productName);
@@ -347,7 +358,7 @@ document.addEventListener("DOMContentLoaded",function(){
             total +=parseFloat(item.price*item.quantity);
         })
     
-        totalAmount.innerText = `Rs. ${total} LKR`;
+        totalAmount.innerText = `${total} LKR`;
     
         cart = favCart;
         localStorage.setItem("cart", JSON.stringify(cart));
@@ -376,15 +387,9 @@ checkOut.addEventListener("click",function(){
 
 // localStorage.removeItem("cart");
 
+const shop = document.getElementById("shop");
 
-const thankyouMsg = document.getElementById("thankContainer")
-const submitBtn = document.getElementById("submit")
-const form = document.getElementById("main_payment_con");
-
-thankyouMsg.hidden = "true";
-
-submitBtn.addEventListener("click",function(e){
-    e.preventDefault();
-    thankyouMsg.hidden = "false";
-    form.hidden = "true";
+shop.addEventListener("click",function(){
+    window.location.href = "./hardware.html";
 })
+

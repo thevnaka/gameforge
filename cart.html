@@ -68,7 +68,7 @@
       <div id='cart'>
 
         <span id="itemCount">0</span>  
-        <a href="/cart.html">  <img src="./Images/shopping-cart.png"> </a>
+        <a href="/cart.html">  <img src="./Images/shopping-cart.png" alt="shopping cart icon"> </a>
 
       </div>
 
@@ -101,18 +101,22 @@
         <button id="favs">Add to Favourites</button>
         <button id="loadFav">Load Favourite</button>
         <button id="checkout">Check Out</button>
+        <button id="clearCart">Clear Cart</button>
 
       </div>
 
 
-      <div id="emptyCart">
+      <div id="emptyCart" class= "emptyCart emptycard_hidden" >
         <div id="backG">
         <h3>Your cart is emptier than my fridge on a Sunday night</h3>
-        <img src="./Images/Empty-Cart-2--Streamline-Bruxelles.png">
+        <img src="./Images/Empty-Cart-2--Streamline-Bruxelles.png" alt="Empty Card">
+        <button id="shop">Shop Now</button>
+        <!-- <button id="loadfavT">Load Favorite</button> -->
         </div>
 
       </div>
 
       <script src="./scripts/products.js" defer> </script>
 </body>
+
 </html>
