@@ -1,215 +1,45 @@
 [
     {
-        "category" : "processors",
-        "product_name" : "Intel Core i9-14900K",
-        "alt_text" : "a1",
-        "img_path": "./Images/ghost.webp",
-        "price":"100000"
-        
+      "category": "processors",
+      "product_name": "Intel Core i9-14900K",
+      "alt_text": "Intel Core i9-14900K",
+      "img_path": "./Images/intelcorei914900k.webp",
+      "price": "164500"
     },
     {
-        "category" : "processors",
-        "product_name" : "Ryzen 9 9950X3D",
-        "alt_text" : "a2",
-        "img_path": "./Images/ghost.webp",
-        "price":"100000"
+      "category": "processors",
+      "product_name": "Ryzen 9 9950X3D",
+      "alt_text": "Ryzen 9 9950X3D",
+      "img_path": "./Images/ryzen99950x3d.webp",
+      "price": "130000"
     },
     {
-        "category" : "processors",
-        "product_name" : "Intel Core i5-14600K",
-        "alt_text" : "a2",
-        "img_path": "./Images/ghost.webp",
-        "price":"100000"
+      "category": "processors",
+      "product_name": "Intel Core i5-14600K",
+      "alt_text": "Intel Core i5-14600K",
+      "img_path": "./Images/intelcorei514th14600k.webp",
+      "price": "114000"
     },
-
     {
-        "category" : "processors",
-        "product_name" : "AMD Ryzen 7 9700X",
-        "alt_text" : "a2",
-        "img_path": "./Images/ghost.webp",
-        "price":"100000"
+      "category": "processors",
+      "product_name": "AMD Ryzen 7 9700X",
+      "alt_text": "AMD Ryzen 7 9700X",
+      "img_path": "./Images/ryzen79700x.webp",
+      "price": "125000"
     },
-
     {
-        "category" : "processors",
-        "product_name" : "Intel Core i9-13900K",
-        "alt_text" : "a2",
-        "img_path": "./Images/ghost.webp",
-        "price":"100000"
+      "category": "processors",
+      "product_name": "Intel Core i9-13900K",
+      "alt_text": "Intel Core i9-13900K",
+      "img_path": "./Images/intelcorei9133900k.webp",
+      "price": "215000"
     },
-
     {
-        "category" : "processors",
-        "product_name" : "Intel Core i7-13700F",
-        "alt_text" : "a2",
-        "img_path": "./Images/ghost.webp",
-        "price":"100000"
-    },
-
-
-
-
-
-
-
-    {
-        "category" : "graphics",
-        "product_name" : "AMD Radeon RX 9070 XT",
-        "alt_text" : "a2",
-        "img_path": "./Images/ghost.webp",
-        "price":"100000"
-    },
-
-    
-    {
-        "category" : "graphics",
-        "product_name" : "Nvidia GeForce RTX 5070 Ti",
-        "alt_text" : "a2",
-        "img_path": "./Images/ghost.webp",
-        "price":"100000"
-    },
-
-    
-    {
-        "category" : "graphics",
-        "product_name" : "Nvidia GeForce RTX 5090",
-        "alt_text" : "a2",
-        "img_path": "./Images/ghost.webp",
-        "price":"100000"
-    },
-
-
-    {
-        "category" : "graphics",
-        "product_name" : "AMD Radeon RX 9070",
-        "alt_text" : "a2",
-        "img_path": "./Images/ghost.webp",
-        "price":"100000"
-    },
-
-    {
-        "category" : "graphics",
-        "product_name" : "Nvidia GeForce RTX 4060",
-        "alt_text" : "a2",
-        "img_path": "./Images/ghost.webp",
-        "price":"100000"
-    },
-
-    {
-        "category" : "graphics",
-        "product_name" : "MSI RTX 3050 Ventus",
-        "alt_text" : "a2",
-        "img_path": "./Images/ghost.webp",
-        "price":"100000"
-    },
-
-
-
-
-
-
-    
-    {
-        "category" : "motherboard",
-        "product_name" : " ASRock X870E Taichi",
-        "alt_text" : "a2",
-        "img_path": "./Images/ghost.webp",
-        "price":"100000"
-    },
-
-    
-    {
-        "category" : "motherboard",
-        "product_name" : "Gigabyte B650E Aorus Master",
-        "alt_text" : "a2",
-        "img_path": "./Images/ghost.webp",
-        "price":"100000"
-    },
-
-    
-    {
-        "category" : "motherboard",
-        "product_name" : "ASRock Z790 Steel Legend",
-        "alt_text" : "a2",
-        "img_path": "./Images/ghost.webp",
-        "price":"100000"
-    },
-
-
-    {
-        "category" : "motherboard",
-        "product_name" : "PRIME Z890-P WIFI",
-        "alt_text" : "a2",
-        "img_path": "./Images/ghost.webp",
-        "price":"100000"
-    },
-
-    {
-        "category" : "motherboard",
-        "product_name" : "PRIME Z890-P WIFI-CSM",
-        "alt_text" : "a2",
-        "img_path": "./Images/ghost.webp",
-        "price":"100000"
-    },
-
-    {
-        "category" : "motherboard",
-        "product_name" : "EX-B860M-V5",
-        "alt_text" : "a2",
-        "img_path": "./Images/ghost.webp",
-        "price":"100000"
-    },
-
-
-
-
-
-
-
-
-       
-    {
-        "category" : "memory",
-        "product_name" : "G.Skill Trident",
-        "alt_text" : "a2",
-        "img_path": "./Images/ghost.webp",
-        "price":"100000"
-    },
-
-    
-    {
-        "category" : "memory",
-        "product_name" : "Samsung DDR5-4800",
-        "alt_text" : "a2",
-        "img_path": "./Images/ghost.webp",
-        "price":"100000"
-    },
-
-    
-    {
-        "category" : "memory",
-        "product_name" : "Patriot Viper DDR4-3600 ",
-        "alt_text" : "a2",
-        "img_path": "./Images/ghost.webp",
-        "price":"100000"
-    },
-
-
-    {
-        "category" : "memory",
-        "product_name" : "Patriot Viper 4 DD",
-        "alt_text" : "a2",
-        "img_path": "./Images/ghost.webp",
-        "price":"100000"
-    },
-
-    
-    {
-        "category" : "memory",
-        "product_name" : "G.Skill Trident Z Neo",
-        "alt_text" : "a2",
-        "img_path": "./Images/ghost.webp",
-        "price":"100000"
+      "category": "processors",
+      "product_name": "Intel Core i7-13700F",
+      "alt_text": "Intel Core i7-13700F",
+      "img_path": "./Images/intelcorei713700f.webp",
+      "price": "147500"
     },
 
 
@@ -218,54 +48,177 @@
 
 
     {
-        "category" : "storage",
-        "product_name" : "990 EVO Plus 2 TB SSD",
-        "alt_text" : "a2",
-        "img_path": "./Images/ghost.webp",
-        "price":"100000"
+      "category": "graphics",
+      "product_name": "AMD Radeon RX 9070 XT",
+      "alt_text": "AMD Radeon RX 9070 XT",
+      "img_path": "./Images/amdradeonrx9070xt.webp",
+      "price": "224500"
+    },
+    {
+      "category": "graphics",
+      "product_name": "Nvidia GeForce RTX 5070 Ti",
+      "alt_text": "Nvidia GeForce RTX 5070 Ti",
+      "img_path": "./Images/amdrx9070xt.webp",
+      "price": "710000"
+    },
+    {
+      "category": "graphics",
+      "product_name": "Nvidia GeForce RTX 5090",
+      "alt_text": "Nvidia GeForce RTX 5090",
+      "img_path": "./Images/geforcertx5090.webp",
+      "price": "160000"
+    },
+    {
+      "category": "graphics",
+      "product_name": "AMD Radeon RX 9070",
+      "alt_text": "AMD Radeon RX 9070",
+      "img_path": "./Images/amdradeonrx9070xt.webp",
+      "price": "195000"
+    },
+    {
+      "category": "graphics",
+      "product_name": "Nvidia GeForce RTX 4060",
+      "alt_text": "Nvidia GeForce RTX 4060",
+      "img_path": "./Images/geforcertx4060.webp",
+      "price": "137600"
+    },
+    {
+      "category": "graphics",
+      "product_name": "MSI RTX 3050 Ventus",
+      "alt_text": "MSI RTX 3050 Ventus",
+      "img_path": "./Images/rtx3050ventus.webp",
+      "price": "255000"
     },
 
 
-    {
-        "category" : "storage",
-        "product_name" : "A400 SATA SSD",
-        "alt_text" : "a2",
-        "img_path": "./Images/ghost.webp",
-        "price":"100000"
-    },
+
+
 
     {
-        "category" : "storage",
-        "product_name" : "SanDisk Extreme Portable SSD",
-        "alt_text" : "a2",
-        "img_path": "./Images/ghost.webp",
-        "price":"100000"
+      "category": "motherboard",
+      "product_name": "ASRock X870E Taichi",
+      "alt_text": "ASRock X870E Taichi",
+      "img_path": "./Images/x8070taichi.webp",
+      "price": "225000"
+    },
+    {
+      "category": "motherboard",
+      "product_name": "Gigabyte B650E Aorus Master",
+      "alt_text": "Gigabyte B650E Aorus Master",
+      "img_path": "./Images/b650eaorusmaster.webp",
+      "price": "200000"
+    },
+    {
+      "category": "motherboard",
+      "product_name": "ASRock Z790 Steel Legend",
+      "alt_text": "ASRock Z790 Steel Legend",
+      "img_path": "./Images/asrockz790steellegend.webp",
+      "price": "194000"
+    },
+    {
+      "category": "motherboard",
+      "product_name": "PRIME Z890-P WIFI",
+      "alt_text": "PRIME Z890-P WIFI",
+      "img_path": "./Images/primez890-pwifi.webp",
+      "price": "205000"
+    },
+    {
+      "category": "motherboard",
+      "product_name": "PRIME Z890-P WIFI-CSM",
+      "alt_text": "PRIME Z890-P WIFI-CSM",
+      "img_path": "./Images/asusprimez890pwificsm.webp",
+      "price": "150000"
+    },
+    {
+      "category": "motherboard",
+      "product_name": "EX-B860M-V5",
+      "alt_text": "EX-B860M-V5",
+      "img_path": "./Images/ex-b860m-v5.webp",
+      "price": "155000"
     },
 
-    {
-        "category" : "storage",
-        "product_name" : "Adata SC750",
-        "alt_text" : "a2",
-        "img_path": "./Images/ghost.webp",
-        "price":"100000"
-    },
+
+
 
     {
-        "category" : "storage",
-        "product_name" : " Samsung Fit Plus (128GB)",
-        "alt_text" : "a2",
-        "img_path": "./Images/ghost.webp",
-        "price":"100000"
+      "category": "memory",
+      "product_name": "G.Skill Trident",
+      "alt_text": "G.Skill Triden",
+      "img_path": "./Images/gskilltridentz.webp",
+      "price": "60000"
+    },
+    {
+      "category": "memory",
+      "product_name": "Samsung DDR5-4800",
+      "alt_text": "Samsung DDR5-4800",
+      "img_path": "./Images/samsungddr54800.webp",
+      "price": "45000"
+    },
+    {
+      "category": "memory",
+      "product_name": "Patriot Viper DDR4-3600",
+      "alt_text": "Patriot Viper DDR4-3600",
+      "img_path": "./Images/patriotviper.webp",
+      "price": "38000"
+    },
+    {
+      "category": "memory",
+      "product_name": "Patriot Viper 4 DD",
+      "alt_text": "Patriot Viper 4 DD",
+      "img_path": "./Images/patriotviper3600.webp",
+      "price": "36000"
+    },
+    {
+      "category": "memory",
+      "product_name": "G.Skill Trident Z Neo",
+      "alt_text": "G.Skill Trident Z Ne",
+      "img_path": "./Images/gskilltridentzneo3600.webp",
+      "price": "75000"
     },
 
+
+
     {
-        "category" : "storage",
-        "product_name" : "Canvas Go! Plus SD",
-        "alt_text" : "a2",
-        "img_path": "./Images/ghost.webp",
-        "price":"100000"
+      "category": "storage",
+      "product_name": "990 EVO Plus 2 TB SSD",
+      "alt_text": "990 EVO Plus 2 TB SSD",
+      "img_path": "./Images/990evoplus2tb.webp",
+      "price": "39000"
+    },
+    {
+      "category": "storage",
+      "product_name": "A400 SATA SSD",
+      "alt_text": "A400 SATA SSD",
+      "img_path": "./Images/a400satassd.webp",
+      "price": "12500"
+    },
+    {
+      "category": "storage",
+      "product_name": "SanDisk Extreme Portable SSD",
+      "alt_text": "SanDisk Extreme Portable SSD",
+      "img_path": "./Images/sandiskextremeportable.webp",
+      "price": "28000"
+    },
+    {
+      "category": "storage",
+      "product_name": "Adata SC750",
+      "alt_text": "Adata SC750",
+      "img_path": "./Images/adatasc750.webp",
+      "price": "18500"
+    },
+    {
+      "category": "storage",
+      "product_name": "Samsung Fit Plus (128GB)",
+      "alt_text": "Samsung Fit Plus (128GB)",
+      "img_path": "./Images/samsungfitplus.webp",
+      "price": "7500"
+    },
+    {
+      "category": "storage",
+      "product_name": "Canvas Go! Plus SD",
+      "alt_text": "Canvas Go! Plus SD",
+      "img_path": "./Images/canvasgoplussd.webp",
+      "price": "9500"
     }
-
-
-
-]
+  ]
+  

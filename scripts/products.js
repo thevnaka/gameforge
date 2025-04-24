@@ -2,13 +2,19 @@ let Main_container = document.getElementsByClassName('hardware_main_con')[0];
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 
+
+
+
+//< -------------------------------------FUNCTION 01 (SUMMARY CART)------------------------------------->
+//displays the order one last time before the user fills the form and pays
 function summaryCart(){
     console.log("summaryCart function is runninggg woohoo");
 
     let Sumdata = JSON.parse(localStorage.getItem("cart")) || [];
     const SumBody = document.getElementById("Summarybody");
 
-    if (!SumBody) {
+    
+    if (!SumBody) { //if the user is not in the checkout page, the code below wont run
         return;
     }
 
@@ -42,7 +48,11 @@ summaryCart();
 
 
 
-//< -------------------------------------FUNCTION 01------------------------------------->
+
+
+
+
+//< -------------------------------------FUNCTION 02 (UPDATE CART)------------------------------------->
 // updates the cart count when an item has been added
 
 function updatecart(){
@@ -51,8 +61,12 @@ function updatecart(){
     }
 
 
+
+
+
     
-//< -------------------------------------FUNCTION 01------------------------------------->
+//< -------------------------------------FUNCTION 03 (LOAD CART PAGE)------------------------------------->
+// all the items the user has added to the cart will be shown
 
 function loadCartpage(){
     let cartdata = JSON.parse(localStorage.getItem("cart")) || [];
@@ -61,33 +75,47 @@ function loadCartpage(){
     // empties the table before extracting data from the local storage to avoid duplicates
     CartBody.innerHTML = "" 
 
+
+    //intialize the dynamic elements
     const totalAmount = document.getElementById("totalPrice");
     const table = document.getElementById("cartTable");
     const emptyMsg = document.getElementById("emptyCart");
     const options = document.getElementById("orderOptions");
+    const favs = document.getElementById("favs");
+    const checkout = document.getElementById("checkout");
+    const clearCart =  document.getElementById("clearCart");
+    // let favCart =  JSON.parse(localStorage.getItem("favourite")) || [];
+
 
 
     // if the cart is empty, then it'll display a msg. Else it'll display the table as usual
-
     if (cartdata.length === 0){ 
         table.hidden=true; 
-        options.style.display = "none";
-        emptyMsg.classList.remove("emptycard_hidden")
+        // options.style.display = "none";
+        favs.style.display = "none";
+        checkout.style.display = "none";
+        clearCart.style.display = "none";
+        emptyMsg.classList.remove("emptycard_hidden");
         return;
     }
 
     else{
     table.hidden = false;
     options.style.display = "flex";
+    favs.style.display = "flex";
+    checkout.style.display = "flex";
+    clearCart.style.display = "flex";
     emptyMsg.classList.add("emptycard_hidden")
-
     }
+
 
     // const SumBody = document.getElementById("Summarybody");
 
 
     let total =0;
 
+
+    //creates dynamic elements according to what the user has addded to cart
     cartdata.forEach(Data=>{
         const row = document.createElement("tr");
 
@@ -119,14 +147,14 @@ function loadCartpage(){
 
         total +=parseFloat(Data.price*Data.quantity);
 
+        })
+
         const clearBtn = document.getElementById("clearCart");
         clearBtn.addEventListener("click",function(){
             localStorage.removeItem("cart")
             updatecart();
             loadCartpage();
-        })
 
-   
         // const sRow = document.createElement("tr");
         // const sItem = document.createElement("td");
         // sItem.innerText = Data.name;
@@ -134,25 +162,26 @@ function loadCartpage(){
         // sRow.appendChild(sItem);
         // SumBody.appendChild(sRow);
     
-
     });
     
-    totalAmount.innerText = `Rs. ${total} LKR`;
+    totalAmount.innerText = `${total} LKR`;
     updatecart();
-
-
-
-
 }
 
-//< -------------------------------------FUNCTION 03------------------------------------->
+
+
+
+
+//< -------------------------------------FUNCTION 04 (LOAD PRODUCTS)------------------------------------->
+// creates dynamic html elements after retreiving data from json to display on the hardware page
+
 
 async function loadproducts(){
     try{
         const response = await fetch('./hardware_details.json');
         const products = await response.json();
 
-        console.log("Data loaded");  // for troubleeshooting
+        console.log("Data loaded");  // for troubleeshooting purposes
 
         let ProcessorSection = document.getElementById("processorSection");
         let GraphicSection = document.getElementById("graphicSection");
@@ -172,7 +201,11 @@ async function loadproducts(){
             let quantityDiv = document.createElement("div");
             let minusBtn = document.createElement("button");
             let plusBtn = document.createElement("button");
-            let quantityDis = document.createElement("span");
+            let quantityDis = document.createElement("input");
+
+            quantityDis.type = "number"
+            quantityDis.min = "1";
+            quantityDis.value = "1";
             
             let Category = product.category;
             let ProcessorContainer = ProcessorSection.querySelector(".hardware_main_con");
@@ -185,7 +218,9 @@ async function loadproducts(){
            
             console.log("Creating element for:", product.product_name);  // for troubleshooting
 
+            //assigning classes and ids for dynamic elements
             processorsDiv.classList.add("processors");
+            quantityDis.id = ("quantityNo");
             ProductDeets.classList.add("hardware_deets");
             productPrice.id  = ("price");
             productThumb.src = product.img_path;
@@ -218,7 +253,10 @@ async function loadproducts(){
             processorsDiv.appendChild(orderButton);
             ProductDeets.appendChild(productName);
             ProductDeets.appendChild(productPrice)
-            // Main_container.appendChild(processorsDiv);
+
+
+
+            //depending on the category, elements will be assigned to different sections in the checkout page
 
             if (Category === "processors"){
                 ProcessorContainer.appendChild(processorsDiv);
@@ -237,29 +275,35 @@ async function loadproducts(){
             }
 
             else if(Category === "storage"){
-                StorageContainer.appendChild(processorsDiv);
-                
+                StorageContainer.appendChild(processorsDiv);  
             }
 
             plusBtn.addEventListener("click",function(){
-                let qty = parseInt(quantityDis.innerText);
-                quantityDis.innerText =  qty + 1;
+                let qty = parseInt(quantityDis.value);
+                quantityDis.value =  qty + 1;
             })
 
             minusBtn.addEventListener("click",function(){
-                let qty = parseFloat(quantityDis.innerText);
+                let qty = parseFloat(quantityDis.value);
                 if (qty>1){
-                    quantityDis.innerText = qty - 1;
+                    quantityDis.value = qty - 1;
                 }
             })
 
-            //< -------------------------------------FUNCTION 04------------------------------------->
+
+
+
+
+
+            //< -------------------------------------FUNCTION 04.1 (ADD TO CART)------------------------------------->
+            //when the user click add to cart, the item will get saved into local storage as an array
+
 
             function addToCart(){
                 console.log("addToCart triggered"); //for troubleshooting
 
                 let currentCart = JSON.parse(localStorage.getItem("cart")) || []; 
-                let quantity = parseInt(quantityDis.innerText);
+                let quantity = parseInt(quantityDis.value);
 
                 let items_to_cart = {
                     name : product.product_name,
@@ -284,15 +328,11 @@ async function loadproducts(){
             orderButton.addEventListener('click',addToCart)
             
         });
-
-    
-        
     }
 
     catch(error){
         console.error("Error fetching data:", error);
     }
-
 
 }
 
@@ -310,15 +350,22 @@ document.addEventListener("DOMContentLoaded",function(){
     let addFav = document.getElementById("favs");
     let loadFav = document.getElementById("loadFav");
 
-    //< -------------------------------------FUNCTION 05------------------------------------->
+
+
+
+//< -------------------------------------FUNCTION 05 (LOAD FAVORITE)------------------------------------->
+//loads the favorite order into the table
 
 
     loadFav.addEventListener("click",function(){
 
       
-        let favCart =  JSON.parse(localStorage.getItem("favourite")) || [];
+        let favCart =  JSON.parse(localStorage.getItem("favourite")) || []; //checks if there's anything in the favorite variable, if not returns null
+
         localStorage.setItem("cart",JSON.stringify(favCart));
-        document.getElementById("itemCount").innerHTML = favCart.length;
+
+        document.getElementById("itemCount").innerHTML = favCart.length; //adjusts the itemCount according to the favorites
+        const emptyMsg = document.getElementById("emptyCart");
 
         const totalAmount = document.getElementById("totalPrice");
         const CartBody = document.getElementById("cartBody");
@@ -332,8 +379,8 @@ document.addEventListener("DOMContentLoaded",function(){
         }
 
     
+        //creates dynamic elements and forms a table depending on the favorites
         else{
-
             favCart.forEach(item=>{
             const row = document.createElement("tr");
             const productName = document.createElement("td");
@@ -362,11 +409,17 @@ document.addEventListener("DOMContentLoaded",function(){
     
         cart = favCart;
         localStorage.setItem("cart", JSON.stringify(cart));
+        loadCartpage();
+
     }
+
     })
+
+
     
 
-    //< -------------------------------------FUNCTION 06------------------------------------->
+    //< -------------------------------------FUNCTION 06 (ADD TO FAVORITE)------------------------------------->
+    //when the user clicks the button, it will assign the cart variable to a new variable called favourite and save in local storage
     
     addFav.addEventListener("click", function() {
         localStorage.setItem("favourite",JSON.stringify(cart));
@@ -376,20 +429,21 @@ document.addEventListener("DOMContentLoaded",function(){
 
 });
 
-window.onload=loadCartpage,updatecart();;
+window.onload=loadCartpage,updatecart();; //runs the functions when the page is being loaded
 
 const checkOut = document.getElementById("checkout");
 checkOut.addEventListener("click",function(){
     window.location.href = "./checkout.html";
 })
 
-// localStorage.clear();
 
-// localStorage.removeItem("cart");
 
 const shop = document.getElementById("shop");
-
 shop.addEventListener("click",function(){
     window.location.href = "./hardware.html";
 })
 
+
+
+// localStorage.clear();
+// localStorage.removeItem("cart");
