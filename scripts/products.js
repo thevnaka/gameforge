@@ -364,14 +364,14 @@ document.addEventListener("DOMContentLoaded",function(){
 
         localStorage.setItem("cart",JSON.stringify(favCart));
 
-        document.getElementById("itemCount").innerHTML = favCart.length; //adjusts the itemCount according to the favorites
+        
         const emptyMsg = document.getElementById("emptyCart");
 
         const totalAmount = document.getElementById("totalPrice");
         const CartBody = document.getElementById("cartBody");
         let total = 0;
     
-        CartBody.innerHTML = "";
+        // CartBody.innerHTML = "";
 
 
         if (favCart.length === 0){
@@ -381,6 +381,9 @@ document.addEventListener("DOMContentLoaded",function(){
     
         //creates dynamic elements and forms a table depending on the favorites
         else{
+            CartBody.innerHTML = ""; 
+            document.getElementById("itemCount").innerHTML = favCart.length; //adjusts the itemCount according to the favorites
+            
             favCart.forEach(item=>{
             const row = document.createElement("tr");
             const productName = document.createElement("td");
@@ -411,7 +414,8 @@ document.addEventListener("DOMContentLoaded",function(){
         localStorage.setItem("cart", JSON.stringify(cart));
         loadCartpage();
 
-    }
+         }
+
 
     })
 
