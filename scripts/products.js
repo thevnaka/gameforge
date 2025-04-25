@@ -320,7 +320,7 @@ async function loadproducts(){
                 
 
                 updatecart(); //once the item is added, runs the updatecart function to update the cart count
-                quantityDis.innerText = "1"
+                quantityDis.value = "1"
 
                 
             }
@@ -362,7 +362,7 @@ document.addEventListener("DOMContentLoaded",function(){
       
         let favCart =  JSON.parse(localStorage.getItem("favourite")) || []; //checks if there's anything in the favorite variable, if not returns null
 
-        localStorage.setItem("cart",JSON.stringify(favCart));
+        // localStorage.setItem("cart",JSON.stringify(favCart));
 
         
         const emptyMsg = document.getElementById("emptyCart");
@@ -376,6 +376,7 @@ document.addEventListener("DOMContentLoaded",function(){
 
         if (favCart.length === 0){
             alert(`No favourites have been added yet.`)
+            return
         }
 
     
@@ -383,7 +384,8 @@ document.addEventListener("DOMContentLoaded",function(){
         else{
             CartBody.innerHTML = ""; 
             document.getElementById("itemCount").innerHTML = favCart.length; //adjusts the itemCount according to the favorites
-            
+            localStorage.setItem("cart",JSON.stringify(favCart));
+
             favCart.forEach(item=>{
             const row = document.createElement("tr");
             const productName = document.createElement("td");
